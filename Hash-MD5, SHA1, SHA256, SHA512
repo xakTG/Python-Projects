@@ -1,1 +1,29 @@
+import hashlib
 
+while True:
+    print()
+    print('You can hash text using MD5, SHA1, SHA256, or SHA512')
+    userChoice = int(input('Choose a function to hash with! (1=MD5, 2=SHA1, 3=SHA256, 4=SHA512, 5=exit program): '))
+    print()
+
+    if userChoice == 1:
+        md5User = input('What do you want to Hash using MD5? ')
+        hashedText = hashlib.md5(md5User.encode())
+        print(hashedText.hexdigest())
+    elif userChoice == 2:
+        sha1User = input('What do you want to Hash using SHA1? ')
+        hashedText = hashlib.sha1(sha1User.encode())
+        print(hashedText.hexdigest())
+    elif userChoice == 3:
+        sha256User = input('What do you want to Hash using SHA256? ')
+        hashedText = hashlib.sha256(sha256User.encode())
+        print(hashedText.hexdigest())
+    elif userChoice == 4:
+        sha512User = input('What do you want to Hash using SHA512? ')
+        hashedText = hashlib.sha512(sha512User.encode())
+        print(hashedText.hexdigest())
+    elif userChoice == 5:
+        break
+    else:
+        print('Error. Please choose a number from 1 to 5: ')
+        continue
